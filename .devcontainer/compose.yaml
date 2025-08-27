@@ -7,9 +7,8 @@ services:
       dockerfile: .devcontainer/Dockerfile
 
     volumes:
-    - ../..:/workspaces:cached
-
-    # Overrides default command so things don't shut down after the process ends.
+      - ../..:/workspaces:cached
+      # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
 
     # Uncomment the next line to use a non-root user for all processes.
@@ -23,7 +22,6 @@ services:
 
     environment:
       DATABASE_URL: postgres://postgres:password@postgres:5432/photonbeat_development
-
   postgres:
     image: postgres:15
     restart: unless-stopped
